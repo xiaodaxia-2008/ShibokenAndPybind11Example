@@ -5,7 +5,6 @@ namespace py = pybind11;
 using namespace pybind11::literals;
 
 using namespace EW;
-using namespace RVS;
 PYBIND11_MODULE(PyEasyWidget, m)
 {
     py::class_<EasyWidget>(m, "EasyWidget")
@@ -23,7 +22,6 @@ PYBIND11_MODULE(PyEasyWidget, m)
             PyTuple_SetItem(args, 1, PyMapping_GetItemString(dict, "QLabel"));
             PyObject *obj = PyObject_CallObject(func, args);
             py::handle h(obj);
-            std::cout << "end\n";
             return py::reinterpret_borrow<py::object>(h);
         });
 }

@@ -6,8 +6,6 @@
 
 #include <memory>
 
-using RVS::GenericRobotController;
-
 namespace EW
 {
 class EasyWidget : public QWidget
@@ -16,10 +14,9 @@ class EasyWidget : public QWidget
 public:
     EasyWidget();
     ~EasyWidget();
-    QLabel* GetLabel() const;
+    QLabel *GetLabel() const;
 
 private:
-    std::shared_ptr<GenericRobotController> m_controller;
     QVBoxLayout *m_layout;
     QLabel *m_label;
 };
